@@ -9,11 +9,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-motor-yellow-400 rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-xl">M</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-12 h-12 bg-motor-yellow-400 rounded-lg flex items-center justify-center relative">
+                <span className="text-black font-bold text-2xl font-['Oswald'] italic transform -skew-x-12">M</span>
               </div>
-              <span className="text-2xl font-bold font-['Oswald']">MotoRevver</span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold font-['Oswald'] text-motor-yellow-400">MOTOREVVER</span>
+                <span className="text-xs text-gray-400 font-medium tracking-wide">DRIVE YOUR DREAMS</span>
+              </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Your ultimate destination for the latest automotive news, reviews, and launches. 
