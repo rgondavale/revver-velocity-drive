@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,16 +17,24 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-motor-yellow-400 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">M</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="relative">
+              {/* Logo square with M */}
+              <div className="w-10 h-10 border-2 border-motor-yellow-400 bg-transparent flex items-center justify-center">
+                <span className="text-motor-yellow-400 font-bold text-xl font-['Oswald']">M</span>
+              </div>
+              {/* Bottom right corner line */}
+              <div className="absolute -bottom-1 -right-1 w-3 h-3 border-r-2 border-b-2 border-motor-yellow-400"></div>
             </div>
-            <span className="text-xl font-bold font-['Oswald']">MotoRevver</span>
-          </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold font-['Oswald'] tracking-wider">MOTOREVVER</span>
+              <span className="text-xs text-motor-yellow-400 font-light tracking-widest">DRIVE YOUR DREAMS</span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="hover:text-motor-yellow-400 transition-colors">Home</a>
+            <Link to="/" className="hover:text-motor-yellow-400 transition-colors">Home</Link>
             
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 hover:text-motor-yellow-400 transition-colors">
@@ -33,12 +42,16 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white text-black border border-gray-200 shadow-lg">
-                <DropdownMenuItem className="hover:bg-motor-yellow-50">Car Launches</DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-motor-yellow-50">Bike Launches</DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-motor-yellow-50">
+                  <Link to="/car-launches">Car Launches</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-motor-yellow-50">
+                  <Link to="/bike-launches">Bike Launches</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="#" className="hover:text-motor-yellow-400 transition-colors">News</a>
+            <Link to="/news" className="hover:text-motor-yellow-400 transition-colors">News</Link>
             
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 hover:text-motor-yellow-400 transition-colors">
@@ -46,8 +59,12 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white text-black border border-gray-200 shadow-lg">
-                <DropdownMenuItem className="hover:bg-motor-yellow-50">Car Reviews</DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-motor-yellow-50">Car Comparison</DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-motor-yellow-50">
+                  <Link to="/car-reviews">Car Reviews</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-motor-yellow-50">
+                  <Link to="/car-comparison">Car Comparison</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             
@@ -57,12 +74,16 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white text-black border border-gray-200 shadow-lg">
-                <DropdownMenuItem className="hover:bg-motor-yellow-50">Bike Reviews</DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-motor-yellow-50">Bike Comparison</DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-motor-yellow-50">
+                  <Link to="/bike-reviews">Bike Reviews</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-motor-yellow-50">
+                  <Link to="/bike-comparison">Bike Comparison</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="#" className="hover:text-motor-yellow-400 transition-colors">Reviews & Blogs</a>
+            <Link to="/reviews-blogs" className="hover:text-motor-yellow-400 transition-colors">Reviews & Blogs</Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -78,24 +99,24 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-black border-t border-gray-800">
             <nav className="py-4 space-y-4">
-              <a href="#" className="block hover:text-motor-yellow-400 transition-colors">Home</a>
+              <Link to="/" className="block hover:text-motor-yellow-400 transition-colors">Home</Link>
               <div className="space-y-2">
                 <span className="block text-motor-yellow-400 font-semibold">Launches</span>
-                <a href="#" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Car Launches</a>
-                <a href="#" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Bike Launches</a>
+                <Link to="/car-launches" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Car Launches</Link>
+                <Link to="/bike-launches" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Bike Launches</Link>
               </div>
-              <a href="#" className="block hover:text-motor-yellow-400 transition-colors">News</a>
+              <Link to="/news" className="block hover:text-motor-yellow-400 transition-colors">News</Link>
               <div className="space-y-2">
                 <span className="block text-motor-yellow-400 font-semibold">Cars</span>
-                <a href="#" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Car Reviews</a>
-                <a href="#" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Car Comparison</a>
+                <Link to="/car-reviews" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Car Reviews</Link>
+                <Link to="/car-comparison" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Car Comparison</Link>
               </div>
               <div className="space-y-2">
                 <span className="block text-motor-yellow-400 font-semibold">Bikes</span>
-                <a href="#" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Bike Reviews</a>
-                <a href="#" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Bike Comparison</a>
+                <Link to="/bike-reviews" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Bike Reviews</Link>
+                <Link to="/bike-comparison" className="block pl-4 hover:text-motor-yellow-400 transition-colors">Bike Comparison</Link>
               </div>
-              <a href="#" className="block hover:text-motor-yellow-400 transition-colors">Reviews & Blogs</a>
+              <Link to="/reviews-blogs" className="block hover:text-motor-yellow-400 transition-colors">Reviews & Blogs</Link>
             </nav>
           </div>
         )}
