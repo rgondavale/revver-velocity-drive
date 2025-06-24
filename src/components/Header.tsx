@@ -19,15 +19,16 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <div className="relative">
-              {/* Logo square with M */}
-              <div className="w-10 h-10 border-2 border-motor-yellow-400 bg-transparent flex items-center justify-center">
+              {/* Logo square with open bottom-right corner */}
+              <div className="w-10 h-10 border-2 border-motor-yellow-400 border-r-0 border-b-0 flex items-center justify-center">
                 <span className="text-motor-yellow-400 font-bold text-xl font-['Oswald']">M</span>
               </div>
-              {/* Bottom right corner line */}
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 border-r-2 border-b-2 border-motor-yellow-400"></div>
+              {/* Bottom and right borders positioned separately */}
+              <div className="absolute bottom-0 left-0 w-3/4 h-0.5 bg-motor-yellow-400"></div>
+              <div className="absolute top-0 right-0 w-0.5 h-3/4 bg-motor-yellow-400"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold font-['Oswald'] tracking-wider">MOTOREVVER</span>
+              <span className="text-lg font-bold font-['Oswald'] tracking-wider text-motor-yellow-400">MOTOREVVER</span>
               <span className="text-xs text-motor-yellow-400 font-light tracking-widest">DRIVE YOUR DREAMS</span>
             </div>
           </Link>

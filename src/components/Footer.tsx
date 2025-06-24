@@ -10,8 +10,14 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-motor-yellow-400 rounded-lg flex items-center justify-center relative">
-                <span className="text-black font-bold text-2xl font-['Oswald'] italic transform -skew-x-12">M</span>
+              <div className="relative">
+                {/* Logo square with open bottom-right corner */}
+                <div className="w-12 h-12 border-2 border-motor-yellow-400 border-r-0 border-b-0 flex items-center justify-center">
+                  <span className="text-motor-yellow-400 font-bold text-2xl font-['Oswald']">M</span>
+                </div>
+                {/* Bottom and right borders positioned separately */}
+                <div className="absolute bottom-0 left-0 w-3/4 h-0.5 bg-motor-yellow-400"></div>
+                <div className="absolute top-0 right-0 w-0.5 h-3/4 bg-motor-yellow-400"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold font-['Oswald'] text-motor-yellow-400">MOTOREVVER</span>
