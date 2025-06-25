@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+import NewsletterSubscription from './NewsletterSubscription';
 
 const Footer = () => {
   return (
@@ -79,16 +80,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Subscribe to get the latest automotive news and reviews delivered to your inbox.
             </p>
-            <div className="space-y-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-motor-yellow-400 text-white"
-              />
-              <button className="w-full bg-motor-yellow-400 hover:bg-motor-yellow-500 text-black font-semibold py-2 rounded-lg transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
+            <NewsletterSubscription />
           </div>
         </div>
 

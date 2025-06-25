@@ -14,6 +14,7 @@ import CarComparison from "./pages/CarComparison";
 import BikeReviews from "./pages/BikeReviews";
 import BikeComparison from "./pages/BikeComparison";
 import ReviewsBlogs from "./pages/ReviewsBlogs";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/bike-reviews" element={<BikeReviews />} />
           <Route path="/bike-comparison" element={<BikeComparison />} />
           <Route path="/reviews-blogs" element={<ReviewsBlogs />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
