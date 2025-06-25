@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -12,6 +11,7 @@ interface Post {
   id: string;
   heading: string;
   body: string;
+  image_url: string | null;
   status: string;
   target_page: string;
   created_at: string;
